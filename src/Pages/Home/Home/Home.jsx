@@ -1,9 +1,15 @@
+import Banner from "../Banner/Banner";
+import PopularClass from "../PopularClass/PopularClass";
+import PopularInstractors from "../PopularInstractors/PopularInstractors";
 
 
 const Home = () => {
     return (
         <div>
-            <h1 className="text-5xl bg-yellow-500">This is home page </h1>
+            <Banner></Banner>
+            <PopularClass></PopularClass>
+            <PopularInstractors></PopularInstractors>
+        
         </div>
     );
 };

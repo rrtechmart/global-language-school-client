@@ -1,16 +1,14 @@
+import { Link } from "react-router-dom";
 
 
 const NavBar = () => {
     const navOptions = <>
-        <li><a>Item 1</a></li>
-        <li>
-            <a>Parent</a>
-            <ul className="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-            </ul>
-        </li>
-        <li><a>Item 3</a></li>
+        <Link className=" text-lg font-semibold mr-4" to='/'>Home</Link>
+        <Link className=" text-lg font-semibold mr-4" to='/instructor'>Instructors</Link>
+        <Link className=" text-lg font-semibold mr-4" to='/class'>Classes</Link>
+        <Link className=" text-lg font-semibold mr-4" to='/dashboard'>Dashboard</Link>
+        <img src="#" alt="userIMG" />
+        <Link className=" text-lg font-semibold ml-4" to='/login'>Login</Link>
     </>
     return (
         <>
@@ -23,15 +21,17 @@ const NavBar = () => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
 
                             {navOptions}
-                            
+
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Global Language School</a>
+                    <a className="btn btn-ghost font-semibold normal-case text-2xl">
+                        Global Language School
+                    </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
 
-                       {navOptions}
+                        {navOptions}
 
                     </ul>
                 </div>
