@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/KVv2yRr/pi5.png",
+      "name": "Instructor A",
+      "email": "instructor_a@example.com",
+      "numberOfClassesTaken": 5,
+      "classesTaken": ["Class A", "Class C", "Class E"]
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/KLZ7XQp/pi6.png",
+      "name": "Instructor B",
+      "email": "instructor_b@example.com",
+      "numberOfClassesTaken": 3,
+      "classesTaken": ["Class B", "Class D"]
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co/LRHkwfX/pi9.png",
+      "name": "Instructor C",
+      "email": "instructor_c@example.com",
+      "numberOfClassesTaken": 2,
+      "classesTaken": ["Class F"]
+    },
+    {
+      "id": 4,
+      "image": "https://i.ibb.co/KVv2yRr/pi5.png",
+      "name": "Instructor A",
+      "email": "instructor_a@example.com",
+      "numberOfClassesTaken": 5,
+      "classesTaken": ["Class A", "Class C", "Class E"]
+    },
+    {
+      "id": 5,
+      "image": "https://i.ibb.co/KLZ7XQp/pi6.png",
+      "name": "Instructor B",
+      "email": "instructor_b@example.com",
+      "numberOfClassesTaken": 3,
+      "classesTaken": ["Class B", "Class D"]
+    },
+    {
+      "id": 6,
+      "image": "https://i.ibb.co/LRHkwfX/pi9.png",
+      "name": "Instructor C",
+      "email": "instructor_c@example.com",
+      "numberOfClassesTaken": 2,
+      "classesTaken": ["Class F"]
+    }
+  ]

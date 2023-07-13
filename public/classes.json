@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "classImage": "https://i.ibb.co/d2NTS7q/c1.png",
+      "className": "Class A",
+      "instructorName": "Instructor A",
+      "availableSeats": 20,
+      "price": 50
+    },
+    {
+      "id": 2,
+      "classImage": "https://i.ibb.co/xzRBSDz/c2.png",
+      "className": "Class B",
+      "instructorName": "Instructor B",
+      "availableSeats": 15,
+      "price": 60
+    },
+    {
+      "id": 3,
+      "classImage": "https://i.ibb.co/b58s21Y/c3.png",
+      "className": "Class C",
+      "instructorName": "Instructor C",
+      "availableSeats": 10,
+      "price": 70
+    },
+    {
+      "id": 4,
+      "classImage": "https://i.ibb.co/b58s21Y/c3.png",
+      "className": "Class D",
+      "instructorName": "Instructor D",
+      "availableSeats": 25,
+      "price": 55
+    },
+    {
+      "id": 5,
+      "classImage": "https://i.ibb.co/xzRBSDz/c2.png",
+      "className": "Class E",
+      "instructorName": "Instructor E",
+      "availableSeats": 18,
+      "price": 65
+    },
+    {
+      "id": 6,
+      "classImage": "https://i.ibb.co/d2NTS7q/c1.png",
+      "className": "Class F",
+      "instructorName": "Instructor F",
+      "availableSeats": 12,
+      "price": 75
+    }
+  ]
+  
