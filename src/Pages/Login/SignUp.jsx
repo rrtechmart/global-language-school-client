@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -120,6 +121,9 @@ const SignUp = () => {
                                 <button className="btn btn-primary">Sign Up</button>
                             </div>
                         </form>
+                        <div>
+                            <SocialLogin></SocialLogin>
+                        </div>
                     </div>
                 </div>
             </div>

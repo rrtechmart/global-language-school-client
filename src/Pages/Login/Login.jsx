@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 
 const Login = () => {
@@ -30,7 +31,7 @@ const Login = () => {
               });
               navigate(from, { replace: true });
         })
-        
+
     };
 
     return (
@@ -63,13 +64,15 @@ const Login = () => {
                             </div>
 
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary"> <input type="submit" value="Login" /> </button> <br />
-
-                                <button className="btn btn-primary"> <input type="submit" value="Google sign In" /> </button>
+                                <button className="btn btn-primary"> <input type="submit" value="Login" /> </button> 
                             </div>
 
-                            <p>Are you new?? <span> <Link to='/signup'>Sign Up</Link> </span> </p>
+                            
                         </form>
+                        <SocialLogin></SocialLogin>
+
+                        <p className="mx-auto py-4">Are you new here?? <span> <Link to='/signup'>Sign Up</Link> </span> </p>
+
                     </div>
                 </div>
             </div>

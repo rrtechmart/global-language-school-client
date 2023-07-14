@@ -23,9 +23,12 @@ const NavBar = () => {
             user ? <>
                 <Link className=" text-lg font-semibold mr-4" to='/dashboard'>Dashboard</Link>
                 <input onClick={handleLogOut} className="text-lg font-semibold ml-4 mr-10" type="submit" value="Log Out" />
-                
 
-                <img src="#" alt="userIMG" />
+                {
+                    // user?.photoURL
+                }                
+
+                <img src="photoURL" alt="photoURL" />
             </> : <>
                 <Link className=" text-lg font-semibold ml-4" to='/login'>Login</Link>
             </>
