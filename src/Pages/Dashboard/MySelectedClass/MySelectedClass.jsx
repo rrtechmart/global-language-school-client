@@ -3,7 +3,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 import SelectedClassCard from "./SelectedClassCard";
 
 
-const MyClass = () => {
+const MySelectedClass = () => {
     const {user}=useContext(AuthContext);
     const[selectedClasses, setSelectedClasses] = useState([]);
     useEffect( ()=>{
@@ -30,4 +30,4 @@ const MyClass = () => {
     );
 };
 
-export default MyClass;
+export default MySelectedClass;

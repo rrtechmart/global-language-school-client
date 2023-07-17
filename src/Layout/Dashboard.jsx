@@ -18,10 +18,22 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
                     {/* Sidebar content here */}
-                    <li> <Link to='/dashboard/myClass'>My selected Class</Link></li>
+
+                    <h3 className="text-2xl font-semibold">For User</h3>
+
+                    <li> <Link to='/dashboard/home'>User home</Link></li>
+                    <li> <Link to='/dashboard/mySelectedClass'>My selected Class</Link></li>
                     <li> <Link to='/dashboard/enrolledClass'>My enrolled Class</Link></li>
                     <li> <Link to='/dashboard/payment'> Payment </Link></li>
                     <li> <Link to='/dashboard/paymentHistory'> Payment History </Link></li>
+                    <br /> <br />
+
+                    <h3 className="text-2xl font-semibold">For Instructor</h3>
+
+                    <li> <Link to='/dashboard/home'>Instructor home</Link></li>
+                    <li> <Link to='/dashboard/addAClass'>Add a Class</Link></li>
+                    <li> <Link to='/dashboard/myClass'>My Class</Link></li>
+                    
                     <br /> <br />
 
                     <li> <Link to='/'> Home </Link></li>

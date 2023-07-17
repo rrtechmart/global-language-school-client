@@ -9,10 +9,12 @@ import SignUp from "../Pages/Login/SignUp";
 import Class from "../Pages/Class/Class";
 import InstructorClass from "../Pages/Instructor/InstructorClass";
 import Dashboard from "../Layout/Dashboard";
-import MyClass from "../Pages/Dashboard/MyClass/MyClass";
 import EnrolledClass from "../Pages/Dashboard/EnrolledClass/EnrolledClass";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
+import MySelectedClass from "../Pages/Dashboard/MySelectedClass/MySelectedClass";
+import AddAClass from "../Pages/Dashboard/Instructors/AddAClass";
+
 
   export const router = createBrowserRouter([
     {
@@ -50,8 +52,8 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
       element:<Dashboard></Dashboard>,
       children:[
         { 
-          path:'myClass',
-          element:<MyClass></MyClass>
+          path:'mySelectedClass',
+          element:<MySelectedClass></MySelectedClass>
         },
         {
           path:'enrolledClass',
@@ -65,6 +67,10 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
           path:'paymentHistory',
           element:<PaymentHistory></PaymentHistory>
         },
+        {
+          path:'addAClass',
+          element:<AddAClass></AddAClass>
+        }
 
       ]
     }
