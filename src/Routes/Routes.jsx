@@ -14,6 +14,7 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import MySelectedClass from "../Pages/Dashboard/MySelectedClass/MySelectedClass";
 import AddAClass from "../Pages/Dashboard/Instructors/AddAClass";
+import MyClass from "../Pages/Dashboard/Instructors/MyClass";
 
 
   export const router = createBrowserRouter([
@@ -70,6 +71,10 @@ import AddAClass from "../Pages/Dashboard/Instructors/AddAClass";
         {
           path:'addAClass',
           element:<AddAClass></AddAClass>
+        },
+        {
+          path:'myClass',
+          element:<MyClass></MyClass>
         }
 
       ]

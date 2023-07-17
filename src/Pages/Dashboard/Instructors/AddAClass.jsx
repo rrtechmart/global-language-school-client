@@ -1,16 +1,18 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form"
 import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
+
 
 const AddAClass = () => {
     const {user} = useContext(AuthContext);
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
         console.log(data)
         
 
         if (user && user.email) {
-            const addedClass = { className:data.className, classImage:data.photoURL, instructorName: user.displayName, instructorEmail: user.email, availableSeat:data.availableSeat, price:data.price }
+            const addedClass = { className:data.className, classImage:data.photoURL, instructorName: user.displayName, instructorEmail: user.email, availableSeat:parseFloat(data.availableSeat) , price:parseFloat(data.price)  }
 
             fetch('http://localhost:5000/classes', {
                 method: 'POST',
@@ -18,8 +20,24 @@ const AddAClass = () => {
                     'content-type': 'application/json'
                 },
                 body: JSON.stringify(addedClass)
+                
+               
 
             })
+            .then(res =>res.json())
+            .then(data=>{
+                console.log(data);
+                if(data.insertedId){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your class has been added',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
+            })
+            
         }
     }
 
