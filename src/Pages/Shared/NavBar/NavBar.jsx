@@ -5,6 +5,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext)
+    
 
     const handleLogOut = () => {
         logOut()
@@ -18,17 +19,12 @@ const NavBar = () => {
         <Link className=" text-lg font-semibold mr-4" to='/class'>Classes</Link>
 
 
-
         {
             user ? <>
-                <Link className=" text-lg font-semibold mr-4" to='/dashboard'>Dashboard</Link>
+                <Link className=" text-lg font-semibold mr-4" to='/dashboard/myClass'>Dashboard</Link>
                 <input onClick={handleLogOut} className="text-lg font-semibold ml-4 mr-10" type="submit" value="Log Out" />
 
-                {
-                    // user?.photoURL
-                }                
-
-                <img src="photoURL" alt="photoURL" />
+                <img className="w-[35px] h-[35px] rounded-lg" src={user?.photoURL} alt="photoURL" />
             </> : <>
                 <Link className=" text-lg font-semibold ml-4" to='/login'>Login</Link>
             </>
@@ -59,9 +55,7 @@ const NavBar = () => {
 
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
-                </div>
+                
             </div>
 
         </>
