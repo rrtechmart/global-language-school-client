@@ -12,7 +12,7 @@ const AddAClass = () => {
         
 
         if (user && user.email) {
-            const addedClass = { className:data.className, classImage:data.photoURL, instructorName: user.displayName, instructorEmail: user.email, availableSeat:parseFloat(data.availableSeat) , price:parseFloat(data.price)  }
+            const addedClass = { className:data.className, classImage:data.photoURL, instructorName: user.displayName, instructorEmail: user.email, availableSeat:parseFloat(data.availableSeat) , price:parseFloat(data.price), status: data.status  }
 
             fetch('http://localhost:5000/classes', {
                 method: 'POST',
@@ -89,6 +89,12 @@ return (
                                 <span className="label-text">Price</span>
                             </label>
                             <input type="text" name="price" placeholder=" price" className="input input-bordered" {...register("price", { required: true })} />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">status</span>
+                            </label>
+                            <input type="text" name="status" placeholder=" status" className="input input-bordered" {...register("status", { required: true })} />
                         </div>
 
                         <div className="form-control mt-6">
