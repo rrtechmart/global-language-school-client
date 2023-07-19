@@ -23,7 +23,23 @@ const ManageClassCard = ({ classItem }) => {
     }
 
     const handleDeny = id =>{
-        
+        fetch(`http://localhost:5000/classes/deny/${id}`, {
+            method: "PATCH"
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your class has been denied',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+
     }
 
     return (
@@ -38,7 +54,7 @@ const ManageClassCard = ({ classItem }) => {
                 <p className="text-lg font-medium"> Status:  {status}</p>
                 <div className="card-actions justify-around">
                     {
-                        status === "approved" ? null : <>
+                        status === "approved" || status === "denied"? null : <>
                             <button onClick={() => handleApprove(_id)} className="btn btn-sm btn-primary">Approved</button>
 
                             <button onClick={()=>handleDeny(_id)} className="btn btn-sm btn-error">Deny</button>
