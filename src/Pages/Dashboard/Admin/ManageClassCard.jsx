@@ -4,7 +4,7 @@ const ManageClassCard = ({ classItem }) => {
     const { classImage, className, instructorName, instructorEmail, availableSeat, price, status, _id } = classItem;
 
     const handleApprove = id => {
-        fetch(`http://localhost:5000/classes/${id}`, {
+        fetch(`http://localhost:5000/classes/approve/${id}`, {
             method: "PATCH"
         })
             .then(res => res.json())
@@ -22,7 +22,7 @@ const ManageClassCard = ({ classItem }) => {
             })
     }
 
-    const handleDeny = id =>{
+    const handleDeny = id => {
         fetch(`http://localhost:5000/classes/deny/${id}`, {
             method: "PATCH"
         })
@@ -42,6 +42,46 @@ const ManageClassCard = ({ classItem }) => {
 
     }
 
+    const handleFeedback = async(id) => {
+        // const sentFeedBack = {feedback: text};
+        // fetch(`http://localhost:5000/classes/feedback/${id}`,{
+        //     method:"PATCH"
+        // })
+        // .then(res => res.json())
+        // .then(data => {
+        //     console.log(data)
+        const { value: text } = await Swal.fire({
+            input: 'textarea',
+            inputLabel: 'Message',
+            inputPlaceholder: 'Type your message here...',
+            inputAttributes: {
+              'aria-label': 'Type your message here'
+            },
+            showCancelButton: true
+          })
+          
+          
+          if (text) {
+            console.log(text);
+            const sentFeedBack = {feedback: text};
+            Swal.fire(text)
+            fetch(`http://localhost:5000/classes/feedback/${id}`,{
+            method:"PATCH",
+            body:JSON.stringify(sentFeedBack),
+            headers: {
+                'content/type':'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+        })
+          }
+        // })
+        
+        
+    }
+
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img src={classImage} alt="Shoes" /></figure>
@@ -54,14 +94,14 @@ const ManageClassCard = ({ classItem }) => {
                 <p className="text-lg font-medium"> Status:  {status}</p>
                 <div className="card-actions justify-around">
                     {
-                        status === "approved" || status === "denied"? null : <>
+                        status === "approved" || status === "denied" ? null : <>
                             <button onClick={() => handleApprove(_id)} className="btn btn-sm btn-primary">Approved</button>
 
-                            <button onClick={()=>handleDeny(_id)} className="btn btn-sm btn-error">Deny</button>
+                            <button onClick={() => handleDeny(_id)} className="btn btn-sm btn-error">Deny</button>
                         </>
                     }
 
-                    <button className="btn btn-sm btn-secondary">Send feedback</button>
+                    <button onClick={() => handleFeedback(_id)} className="btn btn-sm btn-secondary">Send feedback</button>
                 </div>
             </div>
         </div>

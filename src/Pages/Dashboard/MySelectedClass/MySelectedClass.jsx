@@ -10,7 +10,7 @@ const MySelectedClass = () => {
         fetch(`http://localhost:5000/selectedClasses?email=${user?.email}`)
         .then(res =>res.json())
         .then(data => setSelectedClasses(data))
-    },[])
+    },[selectedClasses])
 
     return (
         <div>

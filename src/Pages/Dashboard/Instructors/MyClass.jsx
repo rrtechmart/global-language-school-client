@@ -22,9 +22,7 @@ const MyClass = () => {
                             <tr className="text-lg font-medium">
                                 <th>Class Name</th>
                                 <th>No.of seat</th>
-                                <th>Pending</th>
-                                <th>Approved</th>
-                                <th>Deny</th>
+                                <th>Status</th>
                                 <th>Total enrolled</th>
                                 <th>Feedback</th>
                                 <th>Update</th>
@@ -37,16 +35,14 @@ const MyClass = () => {
                                 myClasses.map(MyClass => <tr
                                     key={MyClass._id}
                                 >
-                                    <th> {myClasses.className} </th>
-                                    <th> {MyClass.availableSeat} </th>
-                                    <td>pending</td>
-                                    <td>approved</td>
-                                    <td>deny</td>
+                                    <th> {MyClass.className} </th>
+                                    <td> {MyClass.availableSeat} </td>
+                                    <td> {MyClass.status} </td>
                                     <td>+{0}</td>
-                                    <td>feedback is given </td>
-                                    <th>
+                                    <td> TODO feedback </td>
+                                    <td>
                                         <button className="btn btn-ghost btn-xs">Update</button>
-                                    </th>
+                                    </td>
                                 </tr>)
                             }
 
