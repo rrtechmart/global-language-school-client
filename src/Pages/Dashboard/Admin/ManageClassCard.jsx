@@ -64,18 +64,22 @@ const ManageClassCard = ({ classItem }) => {
           if (text) {
             console.log(text);
             const sentFeedBack = {feedback: text};
-            Swal.fire(text)
+            // Swal.fire(text)
             fetch(`http://localhost:5000/classes/feedback/${id}`,{
             method:"PATCH",
             body:JSON.stringify(sentFeedBack),
             headers: {
-                'content/type':'application/json'
+                'content-type':'application/json'
             }
         })
         .then(res => res.json())
         .then(data =>{
             console.log(data)
         })
+        .catch(error => {
+            console.error('Error sending feedback:', error);
+          });
+
           }
         // })
         

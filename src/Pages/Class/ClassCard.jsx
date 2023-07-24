@@ -6,7 +6,7 @@ import useCart from "../../hooks/useCart";
 
 
 const ClassCard = ({classItem}) => {
-    const {className, availableSeats, instructorName, classImage, price}= classItem;
+    const {className, availableSeat, instructorName, classImage, price}= classItem;
     const {user}=useContext(AuthContext)
     const navigate = useNavigate();
     // const [ cart, refetch] =useCart();
@@ -17,7 +17,7 @@ const ClassCard = ({classItem}) => {
             navigate('/login');
         }
         else{
-            const selectedClassItem = {email:user.email,className, availableSeats, instructorName, price}
+            const selectedClassItem = {email:user.email,className, availableSeat, instructorName, price}
             fetch('http://localhost:5000/selectedClasses', {
                 method: 'POST',
                 headers:{
@@ -47,7 +47,7 @@ const ClassCard = ({classItem}) => {
                 <div className="card-body">
                     <h2 className="card-title"> Class Name: {className} </h2>
                     <p> Instructor Name: {instructorName} </p>
-                    <p> Available seat: {availableSeats} </p>
+                    <p> Available seat: {availableSeat} </p>
                     <p> Price: {price} </p>
 
                     <div className="card-actions justify-end">

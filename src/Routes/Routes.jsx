@@ -18,6 +18,7 @@ import MyClass from "../Pages/Dashboard/Instructors/MyClass";
 import ManageClass from "../Pages/Dashboard/Admin/ManageClass";
 import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers";
 import AdminRoute from "./AdminRoute";
+import NotFound from "../NotFound/NotFound";
 
 
   export const router = createBrowserRouter([
@@ -81,7 +82,7 @@ import AdminRoute from "./AdminRoute";
         },
         {
           path:'manageClass',
-          element:<AdminRoute><ManageClass></ManageClass></AdminRoute>
+          element:<ManageClass></ManageClass>
         },
         {
           path:'manageUsers',
@@ -89,5 +90,9 @@ import AdminRoute from "./AdminRoute";
         }
 
       ]
+    },
+    {
+      path:'*',
+      element:<NotFound></NotFound>
     }
   ]);

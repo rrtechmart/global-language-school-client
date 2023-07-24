@@ -1,12 +1,14 @@
 
-import { useEffect, useState } from "react";
+
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
 
 
 const ManageUsers = () => {
-    const [users, serUsers] = useState([]);
-    const [disabled, setDisable] = useState(true);
+    // const [users, setUsers] = useState([]);
+    // const [disabled, setDisable] = useState(true);
 
     const handleMakeInstructor = user => {
         fetch(`http://localhost:5000/users/instructors/${user._id}`, {
@@ -47,12 +49,19 @@ const ManageUsers = () => {
             })
 
     }
+    
 
-    useEffect(() => {
-        fetch('http://localhost:5000/users')
-            .then(res => res.json())
-            .then(data => serUsers(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/users')
+    //         .then(res => res.json())
+    //         .then(data => setUsers(data))
+    // }, [])
+
+    const [axiosSecure] = useAxiosSecure();
+    const { data: users = [] } = useQuery(['users'], async () => {
+        const res = await axiosSecure.get('/users')
+        return res.data;
+    })
 
 
 

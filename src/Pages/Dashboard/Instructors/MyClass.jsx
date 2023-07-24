@@ -4,11 +4,11 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 const MyClass = () => {
     const { user } = useContext(AuthContext);
     const [myClasses, setMyClasses] = useState([]);
-    const url = `http://localhost:5000/classes?email=${user?.email}`
-    fetch(url)
+    
+    fetch(`http://localhost:5000/classes?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setMyClasses(data))
-    console.log(myClasses);
+    // console.log(myClasses);
     return (
         <div>
             <h1 className="text-3xl font-bold">This is my classes that I added </h1>
