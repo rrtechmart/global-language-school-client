@@ -3,15 +3,17 @@
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 
 
 
 const ManageUsers = () => {
     // const [users, setUsers] = useState([]);
-    // const [disabled, setDisable] = useState(true);
+    const [disabled, setDisabled] =useState(false);
 
     const handleMakeInstructor = user => {
-        fetch(`http://localhost:5000/users/instructors/${user._id}`, {
+        if(user?.role === 'admin'){
+            fetch(`http://localhost:5000/users/instructors/${user._id}`, {
             method: "PATCH"
         })
             .then(res => res.json())
@@ -28,9 +30,13 @@ const ManageUsers = () => {
                 }
             })
 
+        }
+                
     }
 
     const handleMakeAdmin = user => {
+        
+       if(user?.role === 'admin'){
         fetch(`http://localhost:5000/users/admin/${user._id}`, {
             method: "PATCH"
         })
@@ -47,6 +53,7 @@ const ManageUsers = () => {
                     })
                 }
             })
+       }
 
     }
     
@@ -98,7 +105,7 @@ const ManageUsers = () => {
                                 <td> <button className="bg-lime-400 p-1 rounded-md" onClick={() => handleMakeInstructor(user)} > Make Instructor</button>
                                 </td>
 
-                                <td><button className="bg-lime-600 p-1 rounded-md" onClick={() => handleMakeAdmin(user)}> Make Admin</button></td>
+                                <td><button  className="bg-lime-600 p-1 rounded-md" onClick={() => handleMakeAdmin(user)}> Make Admin</button></td>
 
                             </tr>)
                         }

@@ -1,16 +1,17 @@
 import { loadStripe } from "@stripe/stripe-js";
 import CheckOutForm from "./CheckOutForm";
 import { Elements } from "@stripe/react-stripe-js";
-import { useEffect, useState } from "react";
 // import useAuth from "../../../hooks/useAuth";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 const Payment = () => {
+    const {id}=useParams();
+    console.log(id);
     // const { user } = useAuth();
-    const location = useLocation();
-    const {_id, className, availableSeats, price}=location.state || {};
-    console.log(_id, className,availableSeats,price);
+    // const location = useLocation();
+    // const {_id, className, availableSeats, price}=location.state || {};
+    // console.log(_id, className,availableSeats,price);
 
     // const payableClass = {
     //     _id:payableClass._id,
@@ -18,11 +19,11 @@ const Payment = () => {
     //     price: payableClass.price
     // }
 
-    // fetch(`http://localhost:5000/selectedClasses?${_id}`)
-    // .then(res => res.json())
-    // .then(data =>{
-    //     console.log(data);
-    // })
+    fetch(`http://localhost:5000/selectedClasses/${id}`)
+    .then(res => res.json())
+    .then(data =>{
+        console.log(data);
+    })
 
     return (
         <div className="w-full p-10 ">

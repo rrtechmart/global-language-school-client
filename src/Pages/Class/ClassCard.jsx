@@ -2,14 +2,15 @@ import { useContext } from "react";
 import { Link,  useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
-import useCart from "../../hooks/useCart";
 
 
 const ClassCard = ({classItem}) => {
     const {className, availableSeat, instructorName, classImage, price}= classItem;
     const {user}=useContext(AuthContext)
     const navigate = useNavigate();
-    // const [ cart, refetch] =useCart();
+
+  
+  
 
     const handleSelectClassItem = classItem =>{
         console.log(classItem);
@@ -51,7 +52,7 @@ const ClassCard = ({classItem}) => {
                     <p> Price: {price} </p>
 
                     <div className="card-actions justify-end">
-                        <Link> <button onClick={()=>handleSelectClassItem(classItem)} className="btn btn-primary"> Select Class </button> </Link>
+                        <Link> <button disabled={availableSeat === 0 || user?.role === 'instructor' || user?.role === 'admin'} onClick={()=>handleSelectClassItem(classItem)} className="btn btn-primary"> Select Class </button> </Link>
                     </div>
                 </div>
             </div>

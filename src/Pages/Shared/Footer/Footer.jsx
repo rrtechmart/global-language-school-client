@@ -20,7 +20,7 @@ const Footer = () => {
             </footer>
             <div>
                 <p className="text-white text-center mx-auto w-full mb-6">
-                <small >@copy right power is preserve on global school language</small>
+                <small>-- @copy right power is preserve on global school language --</small>
                 </p>
             </div>
         </div>
