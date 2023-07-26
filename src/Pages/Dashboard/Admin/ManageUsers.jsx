@@ -3,17 +3,16 @@
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
-
 
 
 const ManageUsers = () => {
+    // const {user, loading} = useContext(AuthContext);
     // const [users, setUsers] = useState([]);
-    const [disabled, setDisabled] =useState(false);
+    // const [disable, setDisable] =useState(false);
 
     const handleMakeInstructor = user => {
         if(user?.role === 'admin'){
-            fetch(`http://localhost:5000/users/instructors/${user._id}`, {
+            fetch(`https://global-language-school-server-rrtechmart.vercel.app/users/instructors/${user._id}`, {
             method: "PATCH"
         })
             .then(res => res.json())
@@ -37,7 +36,7 @@ const ManageUsers = () => {
     const handleMakeAdmin = user => {
         
        if(user?.role === 'admin'){
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://global-language-school-server-rrtechmart.vercel.app/users/admin/${user._id}`, {
             method: "PATCH"
         })
             .then(res => res.json())
@@ -59,7 +58,7 @@ const ManageUsers = () => {
     
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/users')
+    //     fetch('https://global-language-school-server-rrtechmart.vercel.app/users')
     //         .then(res => res.json())
     //         .then(data => setUsers(data))
     // }, [])
@@ -105,7 +104,7 @@ const ManageUsers = () => {
                                 <td> <button className="bg-lime-400 p-1 rounded-md" onClick={() => handleMakeInstructor(user)} > Make Instructor</button>
                                 </td>
 
-                                <td><button  className="bg-lime-600 p-1 rounded-md" onClick={() => handleMakeAdmin(user)}> Make Admin</button></td>
+                                <td><button className="bg-lime-600 p-1 rounded-md" onClick={() => handleMakeAdmin(user)}> Make Admin</button></td>
 
                             </tr>)
                         }

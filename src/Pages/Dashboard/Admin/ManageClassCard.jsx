@@ -4,7 +4,7 @@ const ManageClassCard = ({ classItem }) => {
     const { classImage, className, instructorName, instructorEmail, availableSeat, price, status, _id } = classItem;
 
     const handleApprove = id => {
-        fetch(`http://localhost:5000/classes/approve/${id}`, {
+        fetch(`https://global-language-school-server-rrtechmart.vercel.app/classes/approve/${id}`, {
             method: "PATCH"
         })
             .then(res => res.json())
@@ -23,7 +23,7 @@ const ManageClassCard = ({ classItem }) => {
     }
 
     const handleDeny = id => {
-        fetch(`http://localhost:5000/classes/deny/${id}`, {
+        fetch(`https://global-language-school-server-rrtechmart.vercel.app/classes/deny/${id}`, {
             method: "PATCH"
         })
             .then(res => res.json())
@@ -44,7 +44,7 @@ const ManageClassCard = ({ classItem }) => {
 
     const handleFeedback = async(id) => {
         // const sentFeedBack = {feedback: text};
-        // fetch(`http://localhost:5000/classes/feedback/${id}`,{
+        // fetch(`https://global-language-school-server-rrtechmart.vercel.app/classes/feedback/${id}`,{
         //     method:"PATCH"
         // })
         // .then(res => res.json())
@@ -65,7 +65,7 @@ const ManageClassCard = ({ classItem }) => {
             console.log(text);
             const sentFeedBack = {feedback: text};
             // Swal.fire(text)
-            fetch(`http://localhost:5000/classes/feedback/${id}`,{
+            fetch(`https://global-language-school-server-rrtechmart.vercel.app/classes/feedback/${id}`,{
             method:"PATCH",
             body:JSON.stringify(sentFeedBack),
             headers: {

@@ -19,7 +19,7 @@ const ClassCard = ({classItem}) => {
         }
         else{
             const selectedClassItem = {email:user.email,className, availableSeat, instructorName, price}
-            fetch('http://localhost:5000/selectedClasses', {
+            fetch('https://global-language-school-server-rrtechmart.vercel.app/selectedClasses', {
                 method: 'POST',
                 headers:{
                     'content-type': 'application/json'

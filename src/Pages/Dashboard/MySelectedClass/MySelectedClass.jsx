@@ -7,7 +7,7 @@ const MySelectedClass = () => {
     const {user}=useContext(AuthContext);
     const[selectedClasses, setSelectedClasses] = useState([]);
     useEffect( ()=>{
-        fetch(`http://localhost:5000/selectedClasses?email=${user?.email}`)
+        fetch(`https://global-language-school-server-rrtechmart.vercel.app/selectedClasses?email=${user?.email}`)
         .then(res =>res.json())
         .then(data => setSelectedClasses(data))
     },[selectedClasses])

@@ -7,7 +7,7 @@ const useCart = () =>{
     const {refetch, isLoading:loading,  data: cart = [] } = useQuery({
         queryKey: ['carts', user?.email],
         queryFn: async ()=>{
-            const res = await fetch(`http://localhost:5000/carts?email=${user?.email}`);
+            const res = await fetch(`https://global-language-school-server-rrtechmart.vercel.app/carts?email=${user?.email}`);
             return res.json();
         }
       })

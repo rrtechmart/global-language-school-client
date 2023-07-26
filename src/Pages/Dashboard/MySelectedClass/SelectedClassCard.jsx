@@ -11,7 +11,7 @@ const SelectedClassCard = ({ selectedClass }) => {
     const handleDelete = id => {
         const proceed = confirm('Are you confirm to delete it??')
         if (proceed) {
-            fetch(`http://localhost:5000/selectedClasses/${id}`, {
+            fetch(`https://global-language-school-server-rrtechmart.vercel.app/selectedClasses/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -36,7 +36,7 @@ const SelectedClassCard = ({ selectedClass }) => {
     }
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/selectedClasses/pay/${_id}`)
+    //     fetch(`https://global-language-school-server-rrtechmart.vercel.app/selectedClasses/pay/${_id}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             console.log(data);
@@ -52,7 +52,7 @@ const SelectedClassCard = ({ selectedClass }) => {
             _id: selectedClass._id
         }
 
-        fetch(`http://localhost:5000/paymentClasses`,{
+        fetch(`https://global-language-school-server-rrtechmart.vercel.app/paymentClasses`,{
             method:'POST',
             headers:{
                 'content-type': 'application/json',

@@ -20,7 +20,7 @@ const CheckOutForm = ({ classId, className, availableSeats, price }) => {
       currency: "usd",
       description: `Payment for ${className}`,
     };
-    const response = await fetch("http://localhost:5000/create-payment-intent", {
+    const response = await fetch("https://global-language-school-server-rrtechmart.vercel.app/create-payment-intent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

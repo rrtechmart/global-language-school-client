@@ -5,7 +5,7 @@ const MyClass = () => {
     const { user } = useContext(AuthContext);
     const [myClasses, setMyClasses] = useState([]);
     
-    fetch(`http://localhost:5000/classes?email=${user?.email}`)
+    fetch(`https://global-language-school-server-rrtechmart.vercel.app/classes?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setMyClasses(data))
     // console.log(myClasses);

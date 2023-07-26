@@ -19,7 +19,7 @@ const Payment = () => {
     //     price: payableClass.price
     // }
 
-    fetch(`http://localhost:5000/selectedClasses/${id}`)
+    fetch(`https://global-language-school-server-rrtechmart.vercel.app/selectedClasses/${id}`)
     .then(res => res.json())
     .then(data =>{
         console.log(data);

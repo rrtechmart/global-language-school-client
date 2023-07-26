@@ -7,7 +7,7 @@ const InstructorClass = () => {
     const [selectedInstructor, setSelectedInstructor]=useState([]);
     useEffect(()=>{ 
         
-        fetch(`http://localhost:5000/instructorClass?email=${instructors?.email}`)
+        fetch(`https://global-language-school-server-rrtechmart.vercel.app/instructorClass?email=${instructors?.email}`)
         .then(res=>res.json())
         .then(data => setSelectedInstructor(data))
        

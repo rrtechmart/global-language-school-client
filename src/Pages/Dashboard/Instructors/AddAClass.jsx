@@ -14,7 +14,7 @@ const AddAClass = () => {
         if (user && user.email) {
             const addedClass = { className:data.className, classImage:data.photoURL, instructorName: user.displayName, instructorEmail: user.email, availableSeat:parseFloat(data.availableSeat) , price:parseFloat(data.price), status: data.status  }
 
-            fetch('http://localhost:5000/classes', {
+            fetch('https://global-language-school-server-rrtechmart.vercel.app/classes', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
