@@ -11,8 +11,7 @@ const ManageUsers = () => {
     // const [disable, setDisable] =useState(false);
 
     const handleMakeInstructor = user => {
-        if(user?.role === 'admin'){
-            fetch(`https://global-language-school-server-rrtechmart.vercel.app/users/instructors/${user._id}`, {
+        fetch(`https://global-language-school-server-rrtechmart.vercel.app/users/instructors/${user._id}`, {
             method: "PATCH"
         })
             .then(res => res.json())
@@ -29,13 +28,13 @@ const ManageUsers = () => {
                 }
             })
 
-        }
-                
+
+
     }
 
     const handleMakeAdmin = user => {
-        
-       if(user?.role === 'admin'){
+
+
         fetch(`https://global-language-school-server-rrtechmart.vercel.app/users/admin/${user._id}`, {
             method: "PATCH"
         })
@@ -52,10 +51,10 @@ const ManageUsers = () => {
                     })
                 }
             })
-       }
+
 
     }
-    
+
 
     // useEffect(() => {
     //     fetch('https://global-language-school-server-rrtechmart.vercel.app/users')
