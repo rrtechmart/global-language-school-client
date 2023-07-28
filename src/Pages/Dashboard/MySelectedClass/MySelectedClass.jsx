@@ -15,7 +15,7 @@ const MySelectedClass = () => {
     return (
         <div>
             <h1 className="text-4xl font-bold">This is my classes that I selected to get enroll </h1>
-            {selectedClasses.length}
+            
 
             <div className="grid grid-cols-2 gap-10">
                 {

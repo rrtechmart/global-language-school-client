@@ -12,7 +12,6 @@ const MyClass = () => {
     return (
         <div>
             <h1 className="text-3xl font-bold">This is my classes that I added </h1>
-            {myClasses.length}
 
             <div>
                 <div className="overflow-x-auto">
@@ -39,7 +38,7 @@ const MyClass = () => {
                                     <td> {MyClass.availableSeat} </td>
                                     <td> {MyClass.status} </td>
                                     <td>+{0}</td>
-                                    <td> TODO feedback </td>
+                                    <td> {MyClass.feedback} </td>
                                     <td>
                                         <button className="btn btn-ghost btn-xs">Update</button>
                                     </td>
