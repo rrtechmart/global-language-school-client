@@ -5,7 +5,7 @@ const EnrolledClass = () => {
     const [paymentClasses, setPaymentClasses] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/paymentClasses')
+        fetch('https://global-language-school-server-rrtechmart.vercel.app/paymentClasses')
             .then(res => res.json())
             .then(data => setPaymentClasses(data))
     }, [])

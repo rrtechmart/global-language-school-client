@@ -5,6 +5,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import login from '../../assets/class/login.png';
 
 
 const Login = () => {
@@ -44,8 +45,9 @@ const Login = () => {
         <div>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center lg:text-left">
+                    <div className="text-center lg:text-center">
                         <h1 className="text-5xl font-bold">Login now!</h1>
+                        <img className="hidden md:block mx-auto lg:text-center my-6" src={login} alt="" />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">

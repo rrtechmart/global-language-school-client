@@ -73,7 +73,6 @@ const ManageUsers = () => {
     return (
         <div>
             <h1 className="text-3xl font-bold">All users are here who are registered</h1>
-            {users.length}
 
             <div className="overflow-x-auto">
                 <table className="table table-zebra">

@@ -10,7 +10,6 @@ const ManageClass = () => {
     return (
         <div>
             <h1 className="text-3xl font-bold">All classes are here that added by all instructors </h1>
-            {classes.length}
 
             <div className="grid grid-cols-2 gap-10">
                 {
