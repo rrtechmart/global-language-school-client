@@ -75,7 +75,7 @@ import InstructorRoute from "./InstructorRoute";
         },
         {
           path:'addAClass',
-          element:<InstructorRoute> <AddAClass></AddAClass> </InstructorRoute>
+          element: <InstructorRoute><AddAClass></AddAClass></InstructorRoute> 
         },
         {
           path:'myClass',

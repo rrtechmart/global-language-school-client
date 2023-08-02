@@ -1,11 +1,17 @@
 
 import { Helmet } from 'react-helmet-async';
-import useInstructor from '../../hooks/useInstructor';
 import InstructorCard from './InstructorCard';
+import { useEffect, useState } from 'react';
 
 const Instructor = () => {
-    const [instructors] = useInstructor();
-    console.log(instructors);
+    const [instructors, setInstructors]=useState([]);
+    useEffect( ()=>{
+        fetch('https://global-language-school-server-rrtechmart.vercel.app/instructors')
+        .then(res =>res.json())
+        .then(data => setInstructors(data))
+    },[])
+
+    
     return (
         <div>
             <Helmet>

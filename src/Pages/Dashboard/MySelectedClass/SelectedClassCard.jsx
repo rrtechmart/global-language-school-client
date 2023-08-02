@@ -68,7 +68,7 @@ const SelectedClassCard = ({ selectedClass }) => {
 
 
 
-    const dataToSend = {
+    const payableData = {
         className: selectedClass.className,
         availableSeat: selectedClass.availableSeat,
         price: selectedClass.price,
@@ -87,9 +87,15 @@ const SelectedClassCard = ({ selectedClass }) => {
                     <p> Price : $ {price}  </p>
                     <div className="card-actions justify-around">
                         <button onClick={() => handleDelete(_id)} className="btn btn-secondary">Delete</button>
-                        <Link to= {`/dashboard/payment/${selectedClass._id}`} >
+
+                        {/* <Link to= {`/dashboard/payment/${selectedClass._id}`} >
+                            <button onClick={()=>handlePay(selectedClass)} className=" btn btn-primary px-8">Pay</button>
+                        </Link> */}
+
+                        <Link to= {{pathname:`/dashboard/payment/${selectedClass._id}`, state:payableData}} >
                             <button onClick={()=>handlePay(selectedClass)} className=" btn btn-primary px-8">Pay</button>
                         </Link>
+
                     </div>
                 </div>
             </div>

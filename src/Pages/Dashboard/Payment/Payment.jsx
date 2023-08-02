@@ -1,30 +1,14 @@
+import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckOutForm from "./CheckOutForm";
-import { Elements } from "@stripe/react-stripe-js";
-// import useAuth from "../../../hooks/useAuth";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
+// TODO provide pk here
+const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK)
 const Payment = () => {
-    const {id}=useParams();
-    console.log(id);
-    // const { user } = useAuth();
-    // const location = useLocation();
-    // const {_id, className, availableSeats, price}=location.state || {};
-    // console.log(_id, className,availableSeats,price);
-
-    // const payableClass = {
-    //     _id:payableClass._id,
-    //     availableSeats:payableClass.availableSeats,
-    //     price: payableClass.price
-    // }
-
-    fetch(`https://global-language-school-server-rrtechmart.vercel.app/selectedClasses/${id}`)
-    .then(res => res.json())
-    .then(data =>{
-        console.log(data);
-    })
-
+    const location = useLocation();
+    const payableData = location.state;
+    console.log(payableData);
     return (
         <div className="w-full p-10 ">
             <h1 className="mb-6"> Please pay first</h1>
@@ -32,8 +16,6 @@ const Payment = () => {
             <Elements stripe={stripePromise}>
                 <CheckOutForm></CheckOutForm>
             </Elements>
-
-
 
         </div>
     );

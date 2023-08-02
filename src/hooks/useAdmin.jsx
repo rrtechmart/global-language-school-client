@@ -7,7 +7,6 @@ import useAxiosSecure from "./useAxiosSecure";
 const useAdmin = () => {
     const {user, loading} = useContext(AuthContext);
     const [axiosSecure]= useAxiosSecure();
-    console.log(user);
 
     const {data: isAdmin, isLoading: isAdminLoading}= useQuery({
         queryKey: ['isAdmin', user?.email],
@@ -18,7 +17,6 @@ const useAdmin = () => {
                 return false;
               }
               const encodedEmail = encodeURIComponent(user.email);
-              console.log(encodedEmail);
 
 
             const res = await axiosSecure.get(`/users/admin/${encodedEmail}`);
@@ -26,7 +24,6 @@ const useAdmin = () => {
             return res.data.admin;
         }
     })
-    console.log(isAdmin);
     return [isAdmin, isAdminLoading]
 };
 
